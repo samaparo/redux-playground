@@ -1,3 +1,3 @@
 import {test} from './components/test.jsx';
 
-console.log(test.what());
+console.log((new test()).what());
