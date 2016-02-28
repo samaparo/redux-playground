@@ -1,2 +1,3 @@
-var sum = (a, b = 6) => (a + b);
-let b = 2;
+import {test} from './components/test.jsx';
+
+console.log(test.what());

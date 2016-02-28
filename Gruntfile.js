@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       scripts: {
-        files: ['./js/src/**/*.js'],
+        files: ['./js/src/**/*.js', './js/src/**/*.jsx'],
         tasks: ['browserify'],
         options: {
           spawn: false,
@@ -15,19 +15,20 @@ module.exports = function(grunt) {
     },
     browserify: {
       dist: {
-        files: {
-          './js/main.js': ['./js/src/**/*.js']
-        },
         options: {
           transform: [["babelify", {presets: ["es2015", "react"]}]]
+        },
+        files: {
+          './js/main.js': ['./js/src/main.js']
         }
       }
     }
   });
 
   // Load plug-ins
-  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
 
   // define tasks
   grunt.registerTask('default', ['browserify', 'watch']);
