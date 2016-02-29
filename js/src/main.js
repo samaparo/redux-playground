@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 import {test} from './components/test.jsx';
 
-console.log((new test()).what());
+ReactDOM.render(React.createElement(test, null), document.getElementById('app'));

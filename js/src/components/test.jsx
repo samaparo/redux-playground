@@ -1,5 +1,9 @@
-export class test {
-  what() {
-    return 'what?';
+import React from 'react';
+
+let test = React.createClass({
+  render: function () {
+    return <div>hello world</div>;
   }
-};
+});
+
+export {test};
